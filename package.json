@@ -1,10 +1,10 @@
 {
   "name": "dapp",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@gear-js/api": "0.32.4",
-    "@gear-js/react-hooks": "0.5.27",
+    "@gear-js/api": "0.33.2",
+    "@gear-js/react-hooks": "0.6.4",
     "@gear-js/ui": "0.5.19",
     "@mantine/form": "6.0.8",
     "@polkadot/api": "10.9.1",
