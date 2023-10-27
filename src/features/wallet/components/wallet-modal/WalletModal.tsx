@@ -22,10 +22,10 @@ function WalletModal({ onClose }: Props) {
 
   const getWallets = () =>
     WALLETS.map(([id, { SVG, name }]) => {
-      const isEnabled = extensions.some((extension) => extension.name === id);
+      const isEnabled = extensions?.some((extension) => extension.name === id);
       const status = isEnabled ? 'Enabled' : 'Disabled';
 
-      const accountsCount = getWalletAccounts(id).length;
+      const accountsCount = getWalletAccounts(id)?.length;
       const accountsStatus = `${accountsCount} ${accountsCount === 1 ? 'account' : 'accounts'}`;
 
       const onClick = () => setWalletId(id);
