@@ -1,13 +1,16 @@
-import Identicon from '@polkadot/react-identicon';
 import { decodeAddress } from '@gear-js/api';
-import { useAccount } from '@gear-js/react-hooks';
-import clsx from 'clsx';
-import { copyToClipboard } from 'utils';
+import { useAccount, useAlert } from '@gear-js/react-hooks';
 import { Button, Modal, buttonStyles } from '@gear-js/ui';
+import { Identicon } from '@polkadot/react-identicon';
+import clsx from 'clsx';
+
+import { copyToClipboard } from '@/utils';
+
 import { CopySVG, ExitSVG } from '../../assets';
 import { WALLETS } from '../../consts';
 import { useWallet } from '../../hooks';
 import { WalletItem } from '../wallet-item';
+
 import styles from './WalletModal.module.scss';
 
 type Props = {
@@ -16,6 +19,7 @@ type Props = {
 
 function WalletModal({ onClose }: Props) {
   const { extensions, account, login, logout } = useAccount();
+  const alert = useAlert();
 
   const { wallet, walletAccounts, setWalletId, resetWalletId, getWalletAccounts, saveWallet, removeWallet } =
     useWallet();
@@ -66,7 +70,9 @@ function WalletModal({ onClose }: Props) {
       const handleCopyClick = () => {
         const decodedAddress = decodeAddress(address);
 
-        copyToClipboard(decodedAddress);
+        copyToClipboard(decodedAddress).catch((error) =>
+          alert.error(error instanceof Error ? error.message : String(error)),
+        );
         onClose();
       };
 

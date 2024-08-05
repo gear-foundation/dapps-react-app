@@ -1,13 +1,15 @@
 import { useAccount } from '@gear-js/react-hooks';
 import { useState } from 'react';
-import { LOCAL_STORAGE } from 'consts';
+
+import { LOCAL_STORAGE } from '@/consts';
+
 import { WALLET } from './consts';
 import { WalletId } from './types';
 
 function useWallet() {
   const { accounts } = useAccount();
 
-  const [walletId, setWalletId] = useState<WalletId | undefined>(localStorage[LOCAL_STORAGE.WALLET]);
+  const [walletId, setWalletId] = useState<WalletId | undefined>(localStorage[LOCAL_STORAGE.WALLET] as WalletId);
 
   const resetWalletId = () => setWalletId(undefined);
 

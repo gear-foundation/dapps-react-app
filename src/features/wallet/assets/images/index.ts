@@ -1,9 +1,9 @@
-import { ReactComponent as PolkadotSVG } from './polkadot.svg';
-import { ReactComponent as SubWalletSVG } from './subwallet.svg';
-import { ReactComponent as TalismanSVG } from './talisman.svg';
-import { ReactComponent as EnkryptSVG } from './enkrypt.svg';
-import { ReactComponent as WalletSVG } from './wallet.svg';
-import { ReactComponent as ExitSVG } from './exit.svg';
-import { ReactComponent as CopySVG } from './copy.svg';
+import PolkadotSVG from './polkadot.svg?react';
+import SubWalletSVG from './subwallet.svg?react';
+import TalismanSVG from './talisman.svg?react';
+import EnkryptSVG from './enkrypt.svg?react';
+import WalletSVG from './wallet.svg?react';
+import ExitSVG from './exit.svg?react';
+import CopySVG from './copy.svg?react';
 
 export { PolkadotSVG, SubWalletSVG, TalismanSVG, EnkryptSVG, WalletSVG, ExitSVG, CopySVG };

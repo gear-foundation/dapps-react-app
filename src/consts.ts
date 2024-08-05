@@ -1,6 +1,8 @@
 const ADDRESS = {
-  NODE: process.env.REACT_APP_NODE_ADDRESS as string,
+  NODE: import.meta.env.VITE_NODE_ADDRESS as string,
 };
+
+console.log('ADDRESS: ', ADDRESS);
 
 const LOCAL_STORAGE = {
   ACCOUNT: 'account',
