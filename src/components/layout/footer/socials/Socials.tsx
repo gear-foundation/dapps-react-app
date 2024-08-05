@@ -1,7 +1,8 @@
-import TwitterSVG from '@/assets/images/socials/twitter.svg?react';
-import GithubSVG from '@/assets/images/socials/github.svg?react';
 import DiscordSVG from '@/assets/images/socials/discord.svg?react';
+import GithubSVG from '@/assets/images/socials/github.svg?react';
 import MediumSVG from '@/assets/images/socials/medium.svg?react';
+import TwitterSVG from '@/assets/images/socials/twitter.svg?react';
+
 import styles from './Socials.module.scss';
 
 const socials = [

@@ -1,6 +1,7 @@
 import { Wallet } from '@/features/wallet';
-import { Logo } from './logo';
+
 import styles from './Header.module.scss';
+import { Logo } from './logo';
 
 function Header() {
   return (

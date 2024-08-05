@@ -10,10 +10,10 @@ export default defineConfig({
     react(),
     nodePolyfills(),
     svgr(),
-    // checker({
-    //   typescript: true,
-    //   eslint: { lintCommand: 'eslint "./src/**/*.{ts,tsx}"', dev: { logLevel: ['error'] } },
-    // }),
+    checker({
+      typescript: true,
+      eslint: { lintCommand: 'eslint "./src/**/*.{ts,tsx}"', dev: { logLevel: ['error'] } },
+    }),
   ],
 
   resolve: { alias: { '@': '/src' } },

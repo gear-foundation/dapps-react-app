@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+
 import { Home } from './home';
 
 const routes = [{ path: '/', Page: Home }];

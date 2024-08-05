@@ -1,4 +1,5 @@
 import { Entries } from '@/types';
+
 import { EnkryptSVG, PolkadotSVG, SubWalletSVG, TalismanSVG } from './assets';
 
 const WALLET = {
