@@ -1,3 +1,3 @@
-import { useProgramMetadata, useStateMetadata } from './api';
+import { useProgramMetadata } from './api';
 
-export { useProgramMetadata, useStateMetadata };
+export { useProgramMetadata };
