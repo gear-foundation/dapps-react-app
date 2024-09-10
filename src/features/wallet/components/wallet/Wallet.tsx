@@ -1,11 +1,14 @@
 import { useAccount } from '@gear-js/react-hooks';
 import { buttonStyles } from '@gear-js/ui';
-import Identicon from '@polkadot/react-identicon';
+import { Identicon } from '@polkadot/react-identicon';
 import clsx from 'clsx';
 import { useState } from 'react';
 
 import { WalletSVG } from '../../assets';
+import { Balance } from '../balance';
 import { WalletModal } from '../wallet-modal';
+
+import styles from './Wallet.module.scss';
 
 function Wallet() {
   const { account, isAccountReady } = useAccount();
@@ -21,10 +24,14 @@ function Wallet() {
   return isAccountReady ? (
     <>
       {account ? (
-        <button type="button" className={activeClassName} onClick={openModal}>
-          <Identicon value={account.address} size={16} theme="polkadot" className={buttonStyles.icon} />
-          <span>{account.meta.name}</span>
-        </button>
+        <div className={styles.wallet}>
+          <Balance />
+
+          <button type="button" className={activeClassName} onClick={openModal}>
+            <Identicon value={account.address} size={16} theme="polkadot" className={buttonStyles.icon} />
+            <span>{account.meta.name}</span>
+          </button>
+        </div>
       ) : (
         <button type="button" className={className} onClick={openModal}>
           <WalletSVG className={buttonStyles.icon} />
