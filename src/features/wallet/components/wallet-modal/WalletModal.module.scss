@@ -2,10 +2,6 @@
 
 .list {
   @include gap(16px);
-  max-height: 70vh;
-  margin-right: -32px;
-  padding-right: 16px;
-  overflow-y: auto;
 
   .walletButton {
     justify-content: space-between;
@@ -30,7 +26,6 @@
 }
 
 .footer {
-  margin-top: 22px;
   display: flex;
   justify-content: space-between;
 
