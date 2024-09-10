@@ -14,8 +14,9 @@ A ready-made application template with a well-thought-out infrastructure for qui
 
 ## Installation
 
-Simply clone this repo to your local folder
+Create new project based on this template:
 
 ```sh
-git clone https://github.com/gear-dapps/react-app.git d-app
+npx degit gear-foundation/dapps-react-app dApp
+cd dApp
 ```

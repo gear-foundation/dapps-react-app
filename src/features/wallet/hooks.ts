@@ -1,28 +1,25 @@
 import { useAccount } from '@gear-js/react-hooks';
-import { useState } from 'react';
-
-import { LOCAL_STORAGE } from '@/consts';
+import { useEffect, useState } from 'react';
 
 import { WALLET } from './consts';
 import { WalletId } from './types';
 
 function useWallet() {
-  const { accounts } = useAccount();
+  const { wallets, account } = useAccount();
 
-  const [walletId, setWalletId] = useState<WalletId | undefined>(localStorage[LOCAL_STORAGE.WALLET] as WalletId);
+  const defaultWalletId = account?.meta.source as WalletId | undefined;
+  const [walletId, setWalletId] = useState(defaultWalletId);
+
+  const wallet = walletId ? WALLET[walletId] : undefined;
+  const walletAccounts = wallets && walletId ? wallets[walletId].accounts : undefined;
+
+  useEffect(() => {
+    setWalletId(defaultWalletId);
+  }, [defaultWalletId]);
 
   const resetWalletId = () => setWalletId(undefined);
 
-  const getWalletAccounts = (id: WalletId) => accounts?.filter(({ meta }) => meta.source === id);
-
-  const saveWallet = () => walletId && localStorage.setItem(LOCAL_STORAGE.WALLET, walletId);
-
-  const removeWallet = () => localStorage.removeItem(LOCAL_STORAGE.WALLET);
-
-  const wallet = walletId && WALLET[walletId];
-  const walletAccounts = walletId && getWalletAccounts(walletId);
-
-  return { wallet, walletAccounts, setWalletId, resetWalletId, getWalletAccounts, saveWallet, removeWallet };
+  return { wallet, walletAccounts, setWalletId, resetWalletId };
 }
 
 export { useWallet };
