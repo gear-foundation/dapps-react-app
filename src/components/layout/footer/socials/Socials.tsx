@@ -6,10 +6,10 @@ import TwitterSVG from '@/assets/images/socials/twitter.svg?react';
 import styles from './Socials.module.scss';
 
 const socials = [
-  { href: 'https://twitter.com/gear_techs', icon: TwitterSVG },
-  { href: 'https://github.com/gear-tech', icon: GithubSVG },
-  { href: 'https://discord.com/invite/7BQznC9uD9', icon: DiscordSVG },
-  { href: 'https://medium.com/@gear_techs', icon: MediumSVG },
+  { href: 'https://twitter.com/VaraNetwork', icon: TwitterSVG },
+  { href: 'https://github.com/gear-foundation', icon: GithubSVG },
+  { href: 'https://discord.gg/x8ZeSy6S6K', icon: DiscordSVG },
+  { href: 'https://medium.com/@VaraNetwork', icon: MediumSVG },
 ];
 
 function Socials() {
